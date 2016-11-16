@@ -24,12 +24,13 @@
     <%= f.text_field :lastname %>
   </p>
   <p>
+ 
     <%= f.label :username %><br />                
     <%= f.text_field :username %>
   </p>
   <p>
     <%= f.label :email %><br />                
-    <%= f.text_field:email %>
+    <%= f.text_field :email %>
   </p>
   <p>
     <%= f.label :phonenumber %><br />                
@@ -40,8 +41,8 @@
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :confirm_password_ %><br />
-    <%= f.password_field :confirm_password %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </p>
   <p class="button"><%= f.submit %></p>
 <% end %>

@@ -1,13 +1,25 @@
-<%= link_to 'Create events',event_new_form_path, :class=> "btn-warning" %>
+<%= link_to 'Create events',event_new_create_path, :class=> "btn-warning" %>
 
 <center><h1>Create new event</h1></center><div class="row">
  <div class="col-md-6 col-md-offset-3">
  <div class="well">
-   <%= form_for :event do |f| %>
+   <%= form_for :event,url: show_event_path(current_user) do |f| %>
          <%= f.label :title %>
-     <%= f.text_field :title, class: "form-control" %>          <%= f.label :venu %>
-     <%= f.text_field :venu, class: "form-control" %>      <%= f.label :description %>
-     <%= f.text_area :description, size: "10x3", class: "form-control" %>      <%= f.label :event_date %>
+     <%= f.text_field :eventtitle, class: "form-control" %>          <%= f.label :venu %>
+     <%= f.text_field :venue, class: "form-control" %>      <%= f.label :discription %>
+     <%= f.text_area :discription, size: "10x3", class: "form-control" %>  
+     <%= f.label :Invitees %><br /></p>
+    <p>
+  <ul>
+ <% @users.each do |role| %>
+   <li>
+     <%= check_box_tag 'invitee_ids[]', role.id -%>
+     <%= role.username -%>
+   </li>
+ <% end %>
+</ul>
+</p>
+         <%= f.label :event_date %>
      <div class="datetime_select">
        <%= select_month Time.now, prefix: :event,
                                   field_name: :"event_date(2i)",

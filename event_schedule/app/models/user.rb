@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessor :email, :password, :password_confirmation
+	# attr_accessor :email, :password, :password_confirmation
   
   attr_accessor :password
   before_save :encrypt_password
@@ -27,3 +27,7 @@ class User < ActiveRecord::Base
 
 
 end
+
+  # has_many :events, foreign_key: :owner_id
+
+  # has_secure_password

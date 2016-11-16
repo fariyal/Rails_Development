@@ -1,0 +1,7 @@
+ id | firstname | lastname | username |       email        | phonenumber |                        password_hash                         |         password_salt         |         created_at         |         updated_at         
+----+-----------+----------+----------+--------------------+-------------+--------------------------------------------------------------+-------------------------------+----------------------------+----------------------------
+  2 | qwinix    | tech     | qwinix11 | qwinix@yopmail.com | 12345678    | $2a$10$od03dAN9XyEg/ciEmOej6OK5d1KpdHEc3PCGJUHQCNp7EHh47n5S6 | $2a$10$od03dAN9XyEg/ciEmOej6O | 2016-11-15 06:48:24.997754 | 2016-11-15 06:48:24.997754
+  3 | sindhu    | D        | sindhu   | sindhu@gmail.com   | 1234567890  | $2a$10$q.WSxllJ8N8tIRF/QLBNMOUTo5c06iI/6JtP9/K76eRwRtnhcWiGe | $2a$10$q.WSxllJ8N8tIRF/QLBNMO | 2016-11-15 07:20:07.72347  | 2016-11-15 07:20:07.72347
+  4 | sindhu    | D        | sindhu   | sdivakar@gmil.com  | 12345678    | $2a$10$s7kOZ0Yrlfqd8Q5SWRvlkOdi.I52WBzxwEcbO8CQOQsRRAc./r3pS | $2a$10$s7kOZ0Yrlfqd8Q5SWRvlkO | 2016-11-15 07:22:48.366283 | 2016-11-15 07:22:48.366283
+(3 rows)
+

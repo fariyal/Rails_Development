@@ -10,20 +10,40 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-
-
-
-get "log_out" => "sessions#destroy", :as => "log_out"
-get "event_page" => "events#new", :as =>"event_page"
-get "event_new_form" => "events#newform", :as => "event_new_form"
-post "event_new_form" => "events#create", :as => "event_new_create"
-get "log_in" => "sessions#new", :as => "log_in"
-post "log_in" => "events#new", :as => "create_event"
 get "sign_up" => "users#new", :as => "sign_up"
 post"sign_up" => "users#create", :as => "saveuser"
+
+get "log_in" => "sessions#new", :as => "log_in"
+post "log_in" => "sessions#create", :as => "create_event"
+get "log_out" => "sessions#destroy", :as => "log_out"
+
+
+get "/events/index" => "events#index", :as => "events_list"
+
+get "/events/new" => "events#new", :as =>"event_page"
+post "/events/new" => "events#create", :as => "show_event"
+
+get "event_new_form" => "events#newform", :as => "event_new_form"
+post "event_new_form" => "events#create", :as => "event_new_create"
+
+get "events/:event_id/edit" =>"events#edit", :as => "event_edit"
+post"events/:event_id/edit" =>"events#update", :as=> "event_update"
+
+
 root :to => "users#new"
-# resources :users
-# resources :sessions
+resources :users
+resources :sessions
+
+
+
+# get "/users/:user_id/events" => "events#index", as: :list_events
+
+# get "/users/:user_id/events/new" => "events#new", as: :new_event
+
+# post "/users/:user_id/events" => "events#create", as: :create_event
+
+# get "/users/:user_id/events/:event_id/participents" => "events#list_participents", as: :list_participents
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
